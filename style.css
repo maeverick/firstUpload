@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+scroll-behavior: smooth;    
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: clamp(600px,100%,100%)
+    ;
+    font-size: clamp(20px,5px,40px);
+    padding: 10px 10%;
+}
+
+.header{
+ display:flex;
+ justify-content: space-between;
+ align-items: center;
+
+ margin: 10px ;
+}
+.header a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    margin-right: 30px;
+   cursor:default;
+    z-index: 1;
+    overflow: hidden;
+}
+.header .link::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+   border-bottom: 2px solid #e67c03;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+transition: .5s;
+}
+.header .link:hover::before{
+    width: 100%;
+}
+.active{
+    position: relative;
+    background-color: #e67c03;
+    border-radius: 7px;
+   font-weight: 500;
+   padding: 10px;
+   z-index: 10;
+   overflow: hidden;
+}
+
+.active:hover{
+    color: #ffffff;
+}
+.one{
+display: flex;
+justify-content:left;
+align-items: center;
+padding: 20px ;
+margin-top: 100px;
+position: relative;
+}
+.top{
+    margin-left: 50px;
+    position: relative;
+    top: 0px;
+}
+.image{
+    width: 400px;
+    height: auto;
+}
+.sl{
+   width: 600px; 
+}
+.two{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+margin-top: 100px;
+}
+.tips{
+    width: 500px;
+}
+.article{
+    width: 400px;
+}
+.tips h3{
+    font-size: 25px;
+}
+.name,.pub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding-top: 30px;
+    float: left;
+}
+#manager,.writer{
+    float: left;
+    display: flex;
+    width: 200px;
+    text-align: left;
+    text-transform: capitalize;
+margin: 0px 10px;
+
+}
+.name img,.pub img{
+    width: 50px;
+    height: 50px;
+}
+.writer{
+    width: 150px;
+    line-height: 0.9;
+}
+/* Your existing styles */
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .one {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .top {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .image,
+    .sl {
+        width: 100%;
+    }
+
+    .two {
+        margin-top: 50px;
+    }
+
+    .name,
+    .pub,
+    #manager,
+    .writer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name img,
+    .pub img {
+        margin-bottom: 10px;
+    }
+}
